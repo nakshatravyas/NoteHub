@@ -17,7 +17,7 @@ export default function SignIn() {
     event.preventDefault();
     console.log(values)
     try {
-      const res = await axios.post('/users/register', values)
+      const res = await axios.post('https://note-hub.vercel.app/users/register', values)
       console.log(res)
       toast.success("Register Successful")
       navigate('/login')
