@@ -16,7 +16,7 @@ export default function SignIn({ setislogin }) {
     event.preventDefault();
     console.log(values)
     try {
-      const res = await axios.post('/users/login', values)
+      const res = await axios.post('https://note-hub.vercel.app/users/login', values)
       console.log(res)
       localStorage.setItem('authToken', res.data.token)
       setislogin(true)
