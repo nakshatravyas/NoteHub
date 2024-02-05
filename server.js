@@ -10,7 +10,7 @@ dotenv.config()
 app.use(express.json())
 app.use(cors(
     {
-        origin: ["https://note-hub.vercel.app/"],
+        origin: ["https://note-hub-zpi7.vercel.app/"],
         methods: ["POST","GET","PUT","DELETE"],
         credentials: true
     }
