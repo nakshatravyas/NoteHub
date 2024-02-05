@@ -16,7 +16,7 @@ export default function CreateNote() {
     try {
       const token = localStorage.getItem('authToken')
       if (token) {
-        await axios.post(`/api/notes`, note, {
+        await axios.post(`https://note-hub.vercel.app/api/notes`, note, {
           headers: { Authorization: token }
         })
         console.log("suceess")
