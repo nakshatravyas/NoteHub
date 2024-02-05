@@ -8,7 +8,13 @@ const noteRouter=require('./routes/noteRouter')
 const app = express()
 dotenv.config()
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://note-hub.vercel.app/"],
+        methods: ["POST","GET","PUT","DELETE"],
+        credentials: true
+    }
+))
 
 //Routes
 app.use('/users', userRouter)
