@@ -8,7 +8,7 @@ export default function NoteRoute({setislogin}) {
 
       const token = localStorage.getItem('authToken')
       if (token) {
-        const verified = await axios.get('/users/verify', {
+        const verified = await axios.get('https://note-hub.vercel.app/users/verify', {
           headers: { Authorization: token }
         })
         setislogin(verified.data)
