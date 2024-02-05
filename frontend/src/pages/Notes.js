@@ -23,7 +23,7 @@ export default function Notes({ setislogin }) {
   const [filteredNotes, setFilteredNotes] = useState([]);
   const fetchNotes = async (token) => {
     setloading(true)
-    const res = await axios.get('api/notes', {
+    const res = await axios.get('https://note-hub.vercel.app/api/notes', {
       headers: { Authorization: token }
     })
     setNotes(res.data)
