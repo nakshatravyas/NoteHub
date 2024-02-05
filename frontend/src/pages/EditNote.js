@@ -21,7 +21,7 @@ export default function EditNote() {
       setloading(true)
       const token = localStorage.getItem("authToken")
       if (params.id) {
-        const res = await axios.get(`/api/notes/${params.id}`, {
+        const res = await axios.get(`https://note-hub.vercel.app/api/notes/${params.id}`, {
           headers: { Authorization: token }
         })
         setNote({
@@ -40,7 +40,7 @@ export default function EditNote() {
     try {
       const token = localStorage.getItem('authToken')
       if (token) {
-        await axios.put(`/api/notes/${note.id}`, note, {
+        await axios.put(`https://note-hub.vercel.app/api/notes/${note.id}`, note, {
           headers: { Authorization: token }
         })
         toast.success("Note Edited")
@@ -54,7 +54,7 @@ export default function EditNote() {
   const deletefun=async()=>{
     try{
         const token=localStorage.getItem("authToken")
-        await axios.delete(`/api/notes/${note.id}`,{
+        await axios.delete(`https://note-hub.vercel.app/api/notes/${note.id}`,{
           headers:{Authorization:token}
         })
         // window.location='/mynotes';
