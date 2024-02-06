@@ -43,7 +43,7 @@ export default function Notes({ setislogin }) {
     );
     if (filtered.length === 0 && keyword) {
       toast.error("No matching notes");
-      setFilteredNotes([]);
+      // setFilteredNotes([]);
     } else {
       setFilteredNotes(filtered);
     }
