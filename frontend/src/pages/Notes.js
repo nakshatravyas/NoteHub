@@ -59,7 +59,7 @@ export default function Notes({ setislogin }) {
         <h2 id='notehub_title'>NoteHub</h2>
         <img src={Logo} alt="" id='logo' />
         <div style={{ display: "flex", width: "100%", alignItems: "center", justifyContent: "center" }}>
-          <input type="text" autoFocus placeholder='Keyword...' value={searchKeyword}
+          <input type="text" placeholder='Title...' value={searchKeyword}
             onChange={(e) => setSearchKeyword(e.target.value)} />
           <button className='btn hoverr' onClick={handleSearch}><CiSearch /></button>
         </div>
