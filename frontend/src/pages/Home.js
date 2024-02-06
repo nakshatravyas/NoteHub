@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { motion } from 'framer-motion'
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 
 const containerVariants = {
   initial: {},
@@ -26,6 +27,23 @@ const childVariants = {
 };
 
 export default function DisableElevation() {
+  useEffect(() => {
+    const setVhProperty = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    // Execute the function initially
+    setVhProperty();
+
+    // Update the value on window resize
+    window.addEventListener('resize', setVhProperty);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', setVhProperty);
+    };
+  }, []);
   const navigate = useNavigate()
   return (
     <motion.div className="container" initial="initial"
