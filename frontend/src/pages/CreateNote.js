@@ -36,7 +36,7 @@ export default function CreateNote() {
         <button className='btn lg primary' onClick={handleSubmit}>Save</button>
       </header>
       <form className='create-note__form'>
-        <input type="text" placeholder='Title' onChange={e => setNote({ ...note, title: e.target.value })} autoFocus/>
+        <input type="text" placeholder='Title' onChange={e => setNote({ ...note, title: e.target.value })} />
         <textarea rows="28" placeholder='Text Here...' onChange={e => setNote({ ...note, content: e.target.value })}></textarea>
       </form>
     </section>
